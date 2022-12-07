@@ -96,9 +96,7 @@ The user should be able to see the list of tasks, add new ones, delete existing 
         let inputValue = document.getElementById('newTask').value;
         let li = document.createElement('li');
         li.appendChild(document.createTextNode(inputValue));
-        li.setAttribute('id','newElement')
         ul.appendChild(li);
-
 
       }
 
@@ -123,13 +121,14 @@ The user should be able to see the list of tasks, add new ones, delete existing 
             */
 
         function getTasksAsArray(){
-          let strings = document.getElementById('myTaskList');
-          const ar1 = []
-          for( let i = 0; i < sizeof(myTaskList) ; i++){
-            ar1[i]=strings[i]
-          }            
+          let liNodes = document.getElementsByTagName('li');
+          let arr1 = []
+          for (let li of liNodes ){
+            arr1.push(li.innerText);
           }
-        console.log(getTasksAsArray());
+          console.log(arr1);
+        }
+       
         /*
         -make an empty array
         -travel/ loop through the list elements
